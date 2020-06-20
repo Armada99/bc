@@ -16,4 +16,4 @@ if(msg.content==='!code')
  
  });
 
-client.login('NzIyNjg0NDcyNjIwODc1ODU3.XupCig.1J98kBPj60F3aELp3e9Fh9Tq8Ps');
+client.login(process.env.BOT_TOKEN);
