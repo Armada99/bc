@@ -17,7 +17,3 @@ if(msg.content==='!code')
  });
 
 client.login(process.env.BOT_TOKEN);
-
-client.connection({
-    port: process.env.PORT || 3000 
-});
