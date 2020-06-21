@@ -17,3 +17,6 @@ if(msg.content==='!code')
  });
 
 client.login(process.env.BOT_TOKEN);
+
+web=0
+worker=1
