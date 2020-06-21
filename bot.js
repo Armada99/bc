@@ -17,3 +17,5 @@ if(msg.content==='!code')
  });
 
 client.login(process.env.BOT_TOKEN);
+$ heroku scale worker=1
+$ heroku scale web=0
