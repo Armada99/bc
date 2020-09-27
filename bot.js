@@ -8,8 +8,13 @@ client.on('ready', () => {
 
 client.on('message', msg => {
  
- if (msg.content === '!ping')
-     msg.reply('pong');
+if (msg.content === '!ping'){
+    msg.channel.send("Pinging...").then(m =>{
+        var ping = m.createdTimestamp - msg.createdTimestamp;
+        
+        m.edit(`:ping_pong: Pong! Your Ping Is :- ${ping}ms`); 
+    }); return;
+}
  
 if(msg.content==='!code') 
     msg.channel.send("https://link.brawlstars.com/supportcreator/en?code=Mordeus");
