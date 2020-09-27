@@ -2,7 +2,7 @@ const Discord = require('discord.js');
  const client = new Discord.Client();
 
 client.on('ready', () => {
-     client.user.setActivity("Brawl Craft v1.3.1"); 
+     //client.user.setActivity("Brawl Craft v1.3.1"); 
  console.log(`Logged in as ${client.user.tag}!`);
  });
 
