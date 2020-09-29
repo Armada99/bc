@@ -11,7 +11,7 @@ client.on('ready', () => {
 
 client.on('message', msg => {
 
-if(msg.content===';ban someone'){
+if(msg.content===';ban someone'&&msg.author.id==='280745369707610114'){
     msg.channel.send("https://media.tenor.co/videos/9bc39e607e51950eef3de63da7b01280/mp4");
     msg.channel.send("Successfully banned **Armada#3606**");
 }    
