@@ -46,7 +46,7 @@ if(msg.content.startsWith('!purge')&&msg.author.id==='280745369707610114'){
 
 if(!(msg.guild.id==='515192821054177285')) return;
 
-if(msg.member.roles.cache.has('660004539709259808') && Math.floor(Math.random()*10)%3===0){
+if(msg.member.roles.cache.has('660004539709259808') && Math.floor(Math.random()*10)%3===1){
     //lucy
     if(msg.author.id=='394964599801380865') msg.react(lucy[Math.floor(Math.random()*lucy.length)]);
     //milk
