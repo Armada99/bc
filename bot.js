@@ -73,7 +73,7 @@ if (msg.content === '!ping'){
     msg.channel.send("Pinging...").then(m =>{
         var ping = m.createdTimestamp - msg.createdTimestamp;
         
-        m.edit(`:ping_pong: Pong! Your Ping Is :- ${ping}ms`); 
+        m.edit(`:ping_pong: Pong! Your Ping Is : ${ping}ms`); 
     }); return;
 }
 
@@ -130,7 +130,7 @@ function JoinPos(arr1,ID){
 
 if(msg.content==='!restart'&& msg.author.id==oid){
     msg.channel.send('Restarted.').then(() => {
-  process.exit(0);
+  process.exit(1);
     })
 }
 });
