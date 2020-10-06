@@ -130,7 +130,7 @@ function JoinPos(arr1,ID){
 
 if(msg.content==='!restart'&& msg.author.id==oid){
     message.channel.send('Restarted.').then(() => {
-  process.exit(0);
+  process.exit(1);
     })
 }
 });
