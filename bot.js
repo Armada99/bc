@@ -133,7 +133,7 @@ function JoinPos(arr1,ID){
 }
 	
 if(msg.content.startsWith(';ban')&&msg.member.hasPermission('BAN_MEMBERS')){
-    if(msg.mentions.users===null) return msg.channel.send(`You need to mention a User`);
+    if(msg.mentions.users===null) return;
     let em = new Discord.MessageEmbed()
         .setDescription(`<:Check:722874534210043934> ** ${msg.mentions.users.first().username}#${msg.mentions.users.first().discriminator} was banned** | Being sus`)
         .setColor('GREEN'); 
