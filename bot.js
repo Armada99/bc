@@ -3,7 +3,6 @@ const client = new Discord.Client();
 var x="Brawl Craft v1.3.1";
 var lucy=[':blushpensiveconcern:758417447686111304',':pikawot:758417641424683039',':1NitaSmug:637277895177404445',':2PennySmug:732116528337649736',':4MortisSmug:722880939864228000',`:lucywantstodie:758411169047511081`];
 var k=false;
-const oid =280745369707610114;
 var owner=null;
 
 client.on('ready', () => {
@@ -125,7 +124,6 @@ if(msg.content.startsWith('!joinpos')){
         
     msg.channel.send("Your Join Position is = "+pos);
 }
-
 function JoinPos(arr1,ID){
   
     arr1.sort((a, b) => a.joinedAt - b.joinedAt);
@@ -133,8 +131,15 @@ function JoinPos(arr1,ID){
     var pos=arr.indexOf(ID) + 1;
     return pos;
 }
-
-if(msg.content==='!restart'&& msg.author.id==oid){
+	
+if(msg.content.startsWith(';ban')&&msg.member.hasPermission('BAN_MEMBERS')){
+    let em = new Discord.MessageEmbed()
+        .setDescription(`<:Check:722874534210043934> ** ${msg.mentions.users.first().username} was banned** | Being sus`)
+        .setColor('GREEN'); 
+    msg.channel.send(em);
+}
+	
+if(msg.content==='!restart'&& msg.author.id==owner.id){
     msg.channel.send('Restarted.').then(() => {
   process.exit(1);
     })
