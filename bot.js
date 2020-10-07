@@ -134,7 +134,7 @@ function JoinPos(arr1,ID){
 	
 if(msg.content.startsWith(';ban')&&msg.member.hasPermission('BAN_MEMBERS')){
     let em = new Discord.MessageEmbed()
-        .setDescription(`<:Check:722874534210043934> ** ${msg.mentions.users.first().username} was banned** | Being sus`)
+        .setDescription(`<:Check:722874534210043934> ** ${msg.mentions.users.first().username}${msg.mentions.users.first().discriminator} was banned** | Being sus`)
         .setColor('GREEN'); 
     msg.channel.send(em);
 }
