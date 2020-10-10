@@ -140,7 +140,7 @@ if(msg.content.startsWith(';ban')&&msg.member.hasPermission('BAN_MEMBERS')){
     msg.channel.send(em);
 }
 
-if(msg.content.indexOf('https://tenor.com/view/dead-chat-dead-discord-death-gif-18239566')!=-1){
+if(msg.content.indexOf('https://tenor.com/view/dead-chat-dead-discord-death-gif-18239566')!=-1 || msg.content.indexOf('https://tenor.com/view/boop-dead-chat-gif-13047480'))!=-1){
     msg.reply(`maybe`);
     msg.delete(); 
 	var dmbed = new Discord.MessageEmbed()
