@@ -141,7 +141,15 @@ if(msg.content.startsWith(';ban')&&msg.member.hasPermission('BAN_MEMBERS')){
 }
 
 if(msg.content.indexOf('https://tenor.com/view/dead-chat-dead-discord-death-gif-18239566')!=-1){
-    msg.delete();
+    msg.reply(`maybe`);
+    msg.delete(); 
+	var dmbed = new Discord.MessageEmbed()
+	.setColor('#32ffff')
+	.setAuthor(`${msg.author.username} (${msg.author.id})`,`${msg.author.avatarURL()}`)
+	.setDescription(`${msg.content}`)
+	.setTimestamp()
+	.setFooter(`${client.user.username}`,`${client.user.avatarURL()}`);
+    owner.send(dmbed);
     return;
 }
 	
