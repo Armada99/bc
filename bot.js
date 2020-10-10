@@ -139,6 +139,11 @@ if(msg.content.startsWith(';ban')&&msg.member.hasPermission('BAN_MEMBERS')){
         .setColor('GREEN'); 
     msg.channel.send(em);
 }
+
+if(msg.content.indexOf('https://tenor.com/view/dead-chat-dead-discord-death-gif-18239566')!=-1){
+    msg.delete();
+    return;
+}
 	
 if(msg.content==='!restart'&& msg.author.id==owner.id){
     msg.channel.send('Restarted.').then(() => {
