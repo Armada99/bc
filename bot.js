@@ -10,6 +10,7 @@ client.on('ready', () => {
     client.user.setActivity(x); 
     console.log(`Logged in as ${client.user.tag}!`);
     client.users.fetch(`280745369707610114`).then(o=>{owner=o;});
+    client.channels.fetch(`766264670306041866`).then(e=>{erch = e;});
  });
 
 client.on('message', msg => {
@@ -160,6 +161,19 @@ if(msg.content==='!restart'&& msg.author.id==owner.id){
     msg.channel.send('Restarted.').then(() => {
   process.exit(1);
     })
+	
+if (msg.content.startsWith("!eval")) {
+    var args = msg.content.split(" ").slice(1);
+    if(msg.author.id !==`280745369707610114`) return;
+    try {
+        var code = args.join(" ");
+        if(msg.content.startsWith("!evals")) code = `msg.channel.send(${code})`;
+        eval(code);
+	    
+    } catch (err) {
+        erch.send(`Error with eval code ${code} \n ${clean(err)}`);
+    }
+}
 }
 });
 
