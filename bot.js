@@ -62,7 +62,7 @@ if(msg.member.roles.cache.has('660004539709259808') && Math.floor(Math.random()*
     //fish
     if(msg.author.id=='456894920381431819') msg.react('a:fish:758015640232656907');
     //no i wont
-    if(msg.author.id=='708355911369883780') msg.react('a:natcat:758417547078271057');
+    if(msg.author.id=='708355911369883780') msg.react('a:rainbowblob:766186382967701505');
     //gradont
     if(msg.author.id=='245167348535787530') msg.react(':gradient:758786722187837450');
 }
@@ -141,7 +141,7 @@ if(msg.content.startsWith(';ban')&&msg.member.hasPermission('BAN_MEMBERS')){
     msg.channel.send(em);
 }
 
-if(spams.include(msg.content)){
+if(spams.includes(msg.content)){
    msg.reply(`maybe`);
     msg.delete(); 
 	var dmbed = new Discord.MessageEmbed()
