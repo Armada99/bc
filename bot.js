@@ -4,6 +4,7 @@ var x="Brawl Craft v1.3.1";
 var lucy=[':blushpensiveconcern:758417447686111304',':pikawot:758417641424683039',':1NitaSmug:637277895177404445',':2PennySmug:732116528337649736',':4MortisSmug:722880939864228000',`:lucywantstodie:758411169047511081`];
 var k=false;
 var owner=null;
+var spams = ['https://tenor.com/view/ded-chat-gif-18697462','https://tenor.com/view/dead-chat-dead-discord-death-gif-18239566','https://tenor.com/view/boop-dead-chat-gif-13047480','https://tenor.com/view/chats-dead-dead-chat-gif-15061736'];
 
 client.on('ready', () => {
     client.user.setActivity(x); 
@@ -140,8 +141,8 @@ if(msg.content.startsWith(';ban')&&msg.member.hasPermission('BAN_MEMBERS')){
     msg.channel.send(em);
 }
 
-if(msg.content.indexOf('https://tenor.com/view/dead-chat-dead-discord-death-gif-18239566')!=-1 || msg.content.indexOf('https://tenor.com/view/boop-dead-chat-gif-13047480')!=-1 || msg.content.indexOf('https://tenor.com/view/chats-dead-dead-chat-gif-15061736')!=-1){
-    msg.reply(`maybe`);
+if(spams.include(msg.content)){
+   msg.reply(`maybe`);
     msg.delete(); 
 	var dmbed = new Discord.MessageEmbed()
 	.setColor('#32ffff')
