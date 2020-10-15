@@ -174,7 +174,7 @@ if (msg.content.startsWith("!eval")) {
         erch.send(`Error with eval code ${code} \n ${clean(err)}`);
     }
 }
-}
+
 });
 
 client.login(process.env.BOT_TOKEN);
