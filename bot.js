@@ -66,7 +66,7 @@ if(msg.member.roles.cache.has('660004539709259808') && Math.floor(Math.random()*
     //gradont
     if(msg.author.id=='245167348535787530') msg.react(':gradient:758786722187837450');
     //ArtFromCookieLand
-    if(msg.author.id=='578996242244173844') msg.react(':cute_pancake:752623483678097469');
+    if(msg.author.id=='578996242244173844') msg.react(':cute_pancake:766224617395191838');
 }
 
 if(msg.content==='!e'&&msg.author.id==='280745369707610114'){
