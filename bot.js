@@ -83,7 +83,7 @@ if (msg.content === '!ping'){
     msg.channel.send("Pinging...").then(m =>{
         var ping = m.createdTimestamp - msg.createdTimestamp;
         
-        m.edit(`:ping_pong: Pong! Your Ping Is : ${ping}ms`); 
+        m.edit(`:ping_pong: Pong!\nYour Ping Is : ${ping}ms\nAPI Ping : ${client.ws.ping}ms`); 
     }); return;
 }
 
