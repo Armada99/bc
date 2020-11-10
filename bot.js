@@ -102,7 +102,7 @@ if(msg.content.startsWith('!repeat')&&msg.member.hasPermission("ADMINISTRATOR"))
 
 if(msg.content.startsWith('!count')&&msg.member.hasPermission("ADMINISTRATOR")){
     msg.delete();
-    for (var i=15001;i<=50000;i=i+1)
+    for (var i=47068;i<=100000;i=i+1)
     msg.channel.send(i);
 }
 
