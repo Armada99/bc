@@ -70,7 +70,7 @@ if(msg.member.roles.cache.has('660004539709259808') && Math.floor(Math.random()*
     //SpeedyBoost
     if(msg.author.id=='564445298999689218') msg.react('a:Steve:766663449903104010');
     //royale29
-    if(msg.author.id=='554640721970462732') msg.react('a:douglassphere:757149943516364900');
+    if(msg.author.id=='554640721970462732') msg.react(':angryspoike:784437530622951444');
 
 }
 
@@ -80,7 +80,7 @@ if(msg.content==='!e'&&msg.author.id==='280745369707610114'){
     msg.delete();
     return;
 }
-if(msg.author.id==='280745369707610114'&& k) msg.react('a:douglassphere:757149943516364900');
+if(msg.author.id==='280745369707610114'&& k) msg.react(':angryspoike:784437530622951444');
 
 if (msg.content === '!ping'){
     msg.channel.send("Pinging...").then(m =>{
