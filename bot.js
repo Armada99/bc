@@ -80,7 +80,7 @@ if(msg.content==='!e'&&msg.author.id==='280745369707610114'){
     msg.delete();
     return;
 }
-if(msg.author.id==='280745369707610114'&& k) msg.react(':TickDoge:749686427754823800');
+if(msg.author.id==='280745369707610114'&& k) msg.react('a:douglassphere:757149943516364900');
 
 if (msg.content === '!ping'){
     msg.channel.send("Pinging...").then(m =>{
