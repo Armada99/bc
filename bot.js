@@ -69,6 +69,9 @@ if(msg.member.roles.cache.has('660004539709259808') && Math.floor(Math.random()*
     if(msg.author.id=='578996242244173844') msg.react(':cute_pancake:766224617395191838');
     //SpeedyBoost
     if(msg.author.id=='564445298999689218') msg.react('a:Steve:766663449903104010');
+    //royale29
+    if(msg.author.id=='554640721970462732') msg.react('a:douglassphere:757149943516364900');
+
 }
 
 if(msg.content==='!e'&&msg.author.id==='280745369707610114'){
