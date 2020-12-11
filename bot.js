@@ -98,7 +98,7 @@ if(msg.content.startsWith('!blob')&&msg.member.hasPermission('ADMINISTRATOR')) {
 
 if(msg.content.startsWith('!repeat')&&msg.member.hasPermission("ADMINISTRATOR")){
     msg.delete();
-    for (var i=1;i<=15000;i=i+1)
+    for (var i=1;i<=30;i=i+1)
     msg.channel.send(msg.content.substring(8));
 }
 	
