@@ -24,6 +24,8 @@ if(msg.guild === null){ var dmbed = new Discord.MessageEmbed()
     owner.send(dmbed);
     return;         
 }
+	
+msg.react(christmas_tree);
 if(msg.content==='!code'){
     msg.channel.send("https://link.brawlstars.com/supportcreator/en?code=Mordeus");
 }
