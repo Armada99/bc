@@ -52,7 +52,7 @@ if(msg.member.roles.cache.has('660004539709259808') && Math.floor(Math.random()*
     //lucy
     if(msg.author.id=='394964599801380865') msg.react(lucy[Math.floor(Math.random()*lucy.length)]);
     //milk
-    if(msg.author.id=='611569052866969633') msg.react('milk[Math.floor(Math.random()*milk.length)]');
+    if(msg.author.id=='611569052866969633') msg.react(milk[Math.floor(Math.random()*milk.length)]);
     //slyfox aka eggy bo
     if(msg.author.id=='561726475070341161') msg.react(':GWcorbinMonkaGIGA:751537035340283937');
     //cookie
