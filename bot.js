@@ -2,8 +2,10 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 var x="Brawl Craft v1.3.5";
 var lucy=[':blushpensiveconcern:758417447686111304',':pikawot:758417641424683039',':1NitaSmug:637277895177404445',':2PennySmug:732116528337649736',':4MortisSmug:722880939864228000',`:lucywantstodie:758411169047511081`];
-var milk=[':blushhi:793280365996802098','a:SOcleanchat:793246642736332800']
-var ignitis =['a:kirby:791874217972989984','a:ham:793947164417327165']
+var milk=[':blushhi:793280365996802098','a:SOcleanchat:793246642736332800'];
+var ignitis =['a:kirby:791874217972989984','a:ham:793947164417327165'];
+var pedro=[`a:chika:796381634026799104`,`a:swag:793404973496270888`];
+var weasel=[`a:AS02bounce:796434871827431436`,`:2DAquaCry:796436893596254249`]
 var k=false;
 var owner=null;
 var spams = ['https://media.tenor.co/videos/531b01cb9c116f86794f8c1688cad190/mp4','https://media.tenor.co/videos/b8f2911deb1545641621b530e45df7b1/mp4','https://media.tenor.co/videos/c5008f627762851cf476fbd5d0f7452a/mp4','https://media.tenor.co/videos/531b01cb9c116f86794f8c1688cad190/mp4','https://media.tenor.co/videos/7099b7033d5907f51143d69d9d88d8b6/mp4','https://media.tenor.co/videos/3c63230cdb9f2ecdc8018fdc660719fb/mp4','https://tenor.com/view/ded-chat-gif-18697462','https://tenor.com/view/dead-chat-dead-discord-death-gif-18239566','https://tenor.com/view/boop-dead-chat-gif-13047480','https://tenor.com/view/chats-dead-dead-chat-gif-15061736'];
@@ -50,9 +52,7 @@ if(msg.content.startsWith('!purge')&&msg.author.id==='280745369707610114'){
 if(!(msg.guild.id==='515192821054177285')) return;
 
 if(msg.member.roles.cache.has('660004539709259808') && Math.floor(Math.random()*10)%3===1){
-    //lucy
     if(msg.author.id=='394964599801380865') msg.react(lucy[Math.floor(Math.random()*lucy.length)]);
-    //milk
     if(msg.author.id=='611569052866969633') msg.react(milk[Math.floor(Math.random()*milk.length)]);
     //slyfox aka eggy bo
     if(msg.author.id=='561726475070341161') msg.react(':GWcorbinMonkaGIGA:751537035340283937');
@@ -74,8 +74,9 @@ if(msg.member.roles.cache.has('660004539709259808') && Math.floor(Math.random()*
     if(msg.author.id=='564445298999689218') msg.react('a:Steve:766663449903104010');
     //royale29
     if(msg.author.id=='554640721970462732') msg.react(':angryspoike:784437530622951444');
-    //ignitis
     if(msg.author.id=='339536061577428993') msg.react(ignitis[Math.floor(Math.random()*ignitis.length)]);
+    if(msg.author.id=='781201239932141598') msg.react(pedro[Math.floor(Math.random()*pedro.length)]);
+    if(msg.author.id=='526151675640283137') msg.react(weasel[Math.floor(Math.random()*weasel.length)]);
 }
 
 if(msg.content==='!e'&&msg.author.id==='280745369707610114'){
