@@ -54,6 +54,9 @@ if(!(msg.guild.id==='515192821054177285')) return;
 if(msg.member.roles.cache.has('660004539709259808') && Math.floor(Math.random()*10)%3===1){
     if(msg.author.id=='394964599801380865') msg.react(lucy[Math.floor(Math.random()*lucy.length)]);
     if(msg.author.id=='611569052866969633') msg.react(milk[Math.floor(Math.random()*milk.length)]);
+    if(msg.author.id=='339536061577428993') msg.react(ignitis[Math.floor(Math.random()*ignitis.length)]);
+    if(msg.author.id=='781201239932141598') msg.react(pedro[Math.floor(Math.random()*pedro.length)]);
+    if(msg.author.id=='526151675640283137') msg.react(weasel[Math.floor(Math.random()*weasel.length)]);
     //slyfox aka eggy bo
     if(msg.author.id=='561726475070341161') msg.react(':GWcorbinMonkaGIGA:751537035340283937');
     //cookie
@@ -63,7 +66,7 @@ if(msg.member.roles.cache.has('660004539709259808') && Math.floor(Math.random()*
     //ash
     if(msg.author.id=='674268954910523398') msg.react('a:emoji_1:753881559660101652');
     //fish
-    if(msg.author.id=='456894920381431819') msg.react('a:fish:758015640232656907');
+    if(msg.author.id=='456894920381431819') msg.react('a:marniesmile:796707009679589396');
     //no i wont
     if(msg.author.id=='708355911369883780') msg.react('a:rainbowblob:766186382967701505');
     //gradont
@@ -74,10 +77,9 @@ if(msg.member.roles.cache.has('660004539709259808') && Math.floor(Math.random()*
     if(msg.author.id=='564445298999689218') msg.react('a:Steve:766663449903104010');
     //royale29
     if(msg.author.id=='554640721970462732') msg.react(':angryspoike:784437530622951444');
-    if(msg.author.id=='339536061577428993') msg.react(ignitis[Math.floor(Math.random()*ignitis.length)]);
-    if(msg.author.id=='781201239932141598') msg.react(pedro[Math.floor(Math.random()*pedro.length)]);
-    if(msg.author.id=='526151675640283137') msg.react(weasel[Math.floor(Math.random()*weasel.length)]);
-}
+    //moonrise
+    if(msg.author.id=='631200062311235604') msg.react('a:fuminoeating:797548137660940329');
+    }
 
 if(msg.content==='!e'&&msg.author.id==='280745369707610114'){
     k=!k;
