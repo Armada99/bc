@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-var x="Brawl Craft v1.3.5";
+var x="Brawl Craft v1.4.1";
 var lucy=[':blushpensiveconcern:758417447686111304',':pikawot:758417641424683039',':1NitaSmug:637277895177404445',':2PennySmug:732116528337649736',':4MortisSmug:722880939864228000',`:lucywantstodie:758411169047511081`];
 var milk=[':blushhi:793280365996802098','a:SOcleanchat:793246642736332800'];
 var ignitis =['a:kirby:791874217972989984','a:ham:793947164417327165',`a:hyperkirby:799266602825941012`];
