@@ -54,6 +54,10 @@ if(msg.content.startsWith('!purge')&&msg.author.id==='280745369707610114'){
 }
 
 if(!(msg.guild.id==='515192821054177285')) return;
+	
+	
+//mars
+    if(msg.author.id=='495563296103989263'&& Math.floor(Math.random()*10)%3===1) msg.react('a:PetTheMarS:803682020126490696');
 
 if(msg.member.roles.cache.has('660004539709259808') && Math.floor(Math.random()*10)%3===1){
     if(msg.author.id=='394964599801380865') msg.react(lucy[Math.floor(Math.random()*lucy.length)]);
@@ -66,8 +70,6 @@ if(msg.member.roles.cache.has('660004539709259808') && Math.floor(Math.random()*
     if(msg.author.id=='623657319820951552') msg.react(lucx[Math.floor(Math.random()*lucx.length)]);
     if(msg.author.id=='605786935260217344') msg.react(amazingsuper[Math.floor(Math.random()*amazingsuper.length)]);
 
-    //mars
-    if(msg.author.id=='495563296103989263') msg.react('a:PetTheMarS:803682020126490696');
     //slyfox aka eggy bo
     if(msg.author.id=='561726475070341161') msg.react(':GWcorbinMonkaGIGA:751537035340283937');
     //cookie
