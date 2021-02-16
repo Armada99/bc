@@ -9,7 +9,8 @@ var weasel=[`a:AS02bounce:796434871827431436`,`:2DAquaCry:796436893596254249`];
 var neo=[`:neo_pin:797889138803736638`,`:ticksip:797889204985790536`,`:Golden_Tick_Thanks:803650709362573354`];
 var bread=[`a:BlobParty:800426149128699914`];
 var lucx=[`a:dragon_wiggle:803529369355812865`];
-var amazingsuper=[`:ReactHappy:801897629436870708`]
+var amazingsuper=[`:ReactHappy:801897629436870708`];
+var stb = [`a:Bunnymine:809668730887864340`];
 var k=false;
 var owner=null;
 var spams = ['https://media.tenor.co/videos/531b01cb9c116f86794f8c1688cad190/mp4','https://media.tenor.co/videos/b8f2911deb1545641621b530e45df7b1/mp4','https://media.tenor.co/videos/c5008f627762851cf476fbd5d0f7452a/mp4','https://media.tenor.co/videos/531b01cb9c116f86794f8c1688cad190/mp4','https://media.tenor.co/videos/7099b7033d5907f51143d69d9d88d8b6/mp4','https://media.tenor.co/videos/3c63230cdb9f2ecdc8018fdc660719fb/mp4','https://tenor.com/view/ded-chat-gif-18697462','https://tenor.com/view/dead-chat-dead-discord-death-gif-18239566','https://tenor.com/view/boop-dead-chat-gif-13047480','https://tenor.com/view/chats-dead-dead-chat-gif-15061736'];
@@ -69,6 +70,8 @@ if(msg.member.roles.cache.has('660004539709259808') && Math.floor(Math.random()*
     if(msg.author.id=='783922153178398760') msg.react(bread[Math.floor(Math.random()*bread.length)]);
     if(msg.author.id=='623657319820951552') msg.react(lucx[Math.floor(Math.random()*lucx.length)]);
     if(msg.author.id=='605786935260217344') msg.react(amazingsuper[Math.floor(Math.random()*amazingsuper.length)]);
+    if(msg.author.id=='419583794408849420') msg.react(stb[Math.floor(Math.random()*stb.length)]);
+
 
     //slyfox aka eggy bo
     if(msg.author.id=='561726475070341161') msg.react(':GWcorbinMonkaGIGA:751537035340283937');
