@@ -113,7 +113,7 @@ if(msg.guild === null && msg.content.startsWith(`!subpublic`)) {
 return;
 }
 	
-if(!(msg.guild.id==='515192821054177285') ||msg.guild===null) return;
+if(msg.guild===null || !(msg.guild.id==='515192821054177285')) return;
 
 if(msg.content===`!weekly`&& msg.member.hasPermission('ADMINISTRATOR')){
     substatus1=!substatus1;
