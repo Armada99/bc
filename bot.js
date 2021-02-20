@@ -25,6 +25,7 @@ var sno2=1;
 var substatus1=false;
 var substatus2=false;
 var noattach= new Discord.MessageEmbed().setColor(`RED`).setAuthor(`No Attachment Found`).setDescription(`please submit an image of your map along with the map name and link.\n\n**Example:** !submit <map-name> <link> <image>`);
+var subnotopen= new Discord.MessageEmbed().setColor(`RED`).setAuthor(`Submissions are not open yet`).setDescription(`If you feel like this is wrong, please report to a staff`);
 
 client.on('ready', () => {
     client.user.setActivity(x); 
@@ -77,7 +78,7 @@ if(msg.guild === null && msg.content.startsWith(`!subweek`)) {
 
             return;         
         } else msg.channel.send(noattach);
-    } else msg.channel.send("Submissions are not open yet.") 
+    } else msg.channel.send(subnotopen) 
 return;
 }
 	
@@ -108,7 +109,7 @@ if(msg.guild === null && msg.content.startsWith(`!subpublic`)) {
 
             return;         
         } else msg.channel.send(noattach);
-    } else msg.channel.send("Submissions are not open yet.") 
+    } else msg.channel.send(subnotopen) 
 return;
 }
 	
