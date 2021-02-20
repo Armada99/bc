@@ -11,14 +11,25 @@ var bread=[`a:BlobParty:800426149128699914`];
 var lucx=[`a:dragon_wiggle:803529369355812865`];
 var amazingsuper=[`:ReactHappy:801897629436870708`];
 var stb = [`a:Bunnymine:809668730887864340`];
+var spams = ['https://media.tenor.co/videos/531b01cb9c116f86794f8c1688cad190/mp4','https://media.tenor.co/videos/b8f2911deb1545641621b530e45df7b1/mp4','https://media.tenor.co/videos/c5008f627762851cf476fbd5d0f7452a/mp4','https://media.tenor.co/videos/531b01cb9c116f86794f8c1688cad190/mp4','https://media.tenor.co/videos/7099b7033d5907f51143d69d9d88d8b6/mp4','https://media.tenor.co/videos/3c63230cdb9f2ecdc8018fdc660719fb/mp4','https://tenor.com/view/ded-chat-gif-18697462','https://tenor.com/view/dead-chat-dead-discord-death-gif-18239566','https://tenor.com/view/boop-dead-chat-gif-13047480','https://tenor.com/view/chats-dead-dead-chat-gif-15061736'];
+
 var k=false;
 var owner=null;
-var spams = ['https://media.tenor.co/videos/531b01cb9c116f86794f8c1688cad190/mp4','https://media.tenor.co/videos/b8f2911deb1545641621b530e45df7b1/mp4','https://media.tenor.co/videos/c5008f627762851cf476fbd5d0f7452a/mp4','https://media.tenor.co/videos/531b01cb9c116f86794f8c1688cad190/mp4','https://media.tenor.co/videos/7099b7033d5907f51143d69d9d88d8b6/mp4','https://media.tenor.co/videos/3c63230cdb9f2ecdc8018fdc660719fb/mp4','https://tenor.com/view/ded-chat-gif-18697462','https://tenor.com/view/dead-chat-dead-discord-death-gif-18239566','https://tenor.com/view/boop-dead-chat-gif-13047480','https://tenor.com/view/chats-dead-dead-chat-gif-15061736'];
+var dmc=null;
+var subc=null;
+var sublc=null;
+var sno =1;
+var substatus=false;
+var noattach= new Discord.MessageEmbed().setColor(`RED`).setAuthor(`No Attachment Found`).setDescription(`please submit an image of your map along with the map name and link.\n\n**Example:** !submit <map-name> <link> <image>`);
 
 client.on('ready', () => {
     client.user.setActivity(x); 
     console.log(`Logged in as ${client.user.tag}!`);
     client.users.fetch(`280745369707610114`).then(o=>{owner=o;});
+    client.users.fetch(`280745369707610114`).then(o=>{owner=o;});
+    client.channels.fetch(`764059256483348480`).then(c=>{dmc=c;});
+    client.channels.fetch(`812101743101870081`).then(c=>{subc=c;});
+    client.channels.fetch(`812101805517045780`).then(c=>{sublc=c;});
  });
 
 client.on('message', msg => {
@@ -33,33 +44,43 @@ if(msg.guild === null){ var dmbed = new Discord.MessageEmbed()
     owner.send(dmbed);
     return;         
 }
+
+if(msg.guild === null && msg.content.startsWith(`!submit`)) {
+    if(substatus){
+        var Attachment = (msg.attachments).array();
+        if (msg.attachments.size > 0 && attachIsImage(Attachment[0].url)) {
+
+            var sub = new Discord.MessageEmbed()
+            .setColor('GREEN')
+            .setTitle(`Submission #${sno}`)
+            .setTimestamp()
+            .setFooter(`Mini Contest Week 2`,`${client.user.avatarURL()}`)
+            .setImage(Attachment[0].url);
+            subc.send(sub);
+
+            var sublog = new Discord.MessageEmbed()
+            .setColor('GREEN')
+            .setAuthor(`${msg.author.username} (${msg.author.id})`,`${msg.author.avatarURL()}`)
+            .setTitle(`Submission #${sno++}`)
+            .setDescription(`${msg.content.substring(7)}`)
+            .setTimestamp()
+            .setFooter(`Mini Contest Week 2`,`${client.user.avatarURL()}`)
+            .setImage(Attachment[0].url)
+            sublc.send(sublog);
+
+            msg.channel.send(`Map submitted successfully to <#${subc.id}>`,{embed :sub})
+
+            return;         
+        } else msg.channel.send(noattach);
+    } else msg.channel.send("No Submissions are open yet.")
+}
+function attachIsImage(url) {
+    return (url.indexOf("png", url.length - "png".length) !== -1 || url.indexOf("jpg", url.length - "jpg".length) !== -1 );
+}
 	
-if(msg.content==='!code'){
-    msg.channel.send("https://link.brawlstars.com/supportcreator/en?code=Mordeus");
-}
-
-if(msg.content.startsWith('!purge')&&msg.author.id==='280745369707610114'){
-
-    const args = msg.content.split(' ').slice(1);
-    const amount = args.join(' ');
-
-    if (!amount) return msg.reply('You haven\'t given an amount of messages which should be deleted!'); 
-    if (isNaN(amount)) return msg.reply('The amount parameter isn`t a number!');
-
-    if (amount > 100) return msg.reply('You can`t delete more than 100 messages at once!');
-    if (amount < 1) return msg.reply('You have to delete at least 1 message!');
-
-    msg.channel.messages.fetch({ limit: amount }).then(messages => { 
-    msg.channel.bulkDelete(messages)});
-    return;
-}
-
+	
 if(!(msg.guild.id==='515192821054177285')) return;
 	
-	
-//mars
-    if(msg.author.id=='495563296103989263'&& Math.floor(Math.random()*10)%3===1) msg.react('a:PetTheMarS:803682020126490696');
-
 if(msg.member.roles.cache.has('660004539709259808') && Math.floor(Math.random()*10)%3===1){
     if(msg.author.id=='394964599801380865') msg.react(lucy[Math.floor(Math.random()*lucy.length)]);
     if(msg.author.id=='611569052866969633') msg.react(milk[Math.floor(Math.random()*milk.length)]);
@@ -71,7 +92,6 @@ if(msg.member.roles.cache.has('660004539709259808') && Math.floor(Math.random()*
     if(msg.author.id=='623657319820951552') msg.react(lucx[Math.floor(Math.random()*lucx.length)]);
     if(msg.author.id=='605786935260217344') msg.react(amazingsuper[Math.floor(Math.random()*amazingsuper.length)]);
     if(msg.author.id=='419583794408849420') msg.react(stb[Math.floor(Math.random()*stb.length)]);
-
 
     //slyfox aka eggy bo
     if(msg.author.id=='561726475070341161') msg.react(':GWcorbinMonkaGIGA:751537035340283937');
@@ -87,15 +107,15 @@ if(msg.member.roles.cache.has('660004539709259808') && Math.floor(Math.random()*
     if(msg.author.id=='708355911369883780') msg.react('a:rainbowblob:766186382967701505');
     //gradont
     if(msg.author.id=='245167348535787530') msg.react(':gradient:758786722187837450');
-    //ArtFromCookieLand
+    //ArtFromCookieLand 
     if(msg.author.id=='578996242244173844') msg.react(':cute_pancake:766224617395191838');
-    //SpeedyBoost
+    //SpeedyBoost 
     if(msg.author.id=='564445298999689218') msg.react('a:Steve:766663449903104010');
-    //royale29
+    //royale29 
     if(msg.author.id=='554640721970462732') msg.react(':angryspoike:784437530622951444');
     //moonrise
     if(msg.author.id=='631200062311235604') msg.react('a:fuminoeating:797548137660940329');
-    }
+}
 
 if(msg.content==='!e'&&msg.author.id==='280745369707610114'){
     k=!k;
@@ -113,6 +133,9 @@ if (msg.content === '!ping'){
     }); return;
 }
 
+if(msg.content==='!code'){
+    msg.channel.send("https://link.brawlstars.com/supportcreator/en?code=Mordeus");
+}
     
 if(msg.content.startsWith('!blob')&&msg.member.hasPermission('ADMINISTRATOR')) {
     msg.channel.send('<a:blob:723014183645478912>');
@@ -125,13 +148,6 @@ if(msg.content.startsWith('!repeat')&&msg.member.hasPermission("ADMINISTRATOR"))
     msg.channel.send(msg.content.substring(8));
 }
 	
-
-if(msg.content.startsWith('!count')&&msg.member.hasPermission("ADMINISTRATOR")){
-    msg.delete();
-    for (var i=298236;i<=i+500;i=i+1)
-    msg.channel.send(i);
-}
-
 if(msg.content.startsWith('!status')){
     console.log(`${msg.channel.name} : ${msg.author.username} - ${msg.content}`);
      if(!msg.member.hasPermission('ADMINISTRATOR')){
