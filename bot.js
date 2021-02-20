@@ -33,9 +33,9 @@ client.on('ready', () => {
     client.users.fetch(`280745369707610114`).then(o=>{owner=o;});
     client.channels.fetch(`812494315929731103`).then(c=>{dmc=c;});
     client.channels.fetch(`812101743101870081`).then(c=>{subc1=c;});
-    client.channels.fetch(`812101805517045780`).then(c=>{subc2=c;});
+    client.channels.fetch(`812813603996303360`).then(c=>{subc2=c;});
     client.channels.fetch(`812101805517045780`).then(c=>{sublc1=c;});  //weekly log
-    client.channels.fetch(`812101805517045780`).then(c=>{sublc2=c;});  //public log
+    client.channels.fetch(`812813652368949278`).then(c=>{sublc2=c;});  //public log
  });
 
 client.on('message', msg => {
