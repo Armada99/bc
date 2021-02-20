@@ -27,7 +27,7 @@ client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
     client.users.fetch(`280745369707610114`).then(o=>{owner=o;});
     client.users.fetch(`280745369707610114`).then(o=>{owner=o;});
-    client.channels.fetch(`764059256483348480`).then(c=>{dmc=c;});
+    client.channels.fetch(`812494315929731103`).then(c=>{dmc=c;});
     client.channels.fetch(`812101743101870081`).then(c=>{subc=c;});
     client.channels.fetch(`812101805517045780`).then(c=>{sublc=c;});
  });
