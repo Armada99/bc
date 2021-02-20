@@ -41,7 +41,7 @@ if(msg.guild === null){ var dmbed = new Discord.MessageEmbed()
 	.setDescription(`${msg.content}`)
 	.setTimestamp()
 	.setFooter(`${client.user.username}`,`${client.user.avatarURL()}`);
-    owner.send(dmbed);       
+    dmc.send(dmbed);       
 }
 
 if(msg.guild === null && msg.content.startsWith(`!submit`)) {
