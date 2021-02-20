@@ -19,7 +19,7 @@ var dmc=null;
 var subc=null;
 var sublc=null;
 var sno =1;
-var substatus=true;
+var substatus=false;
 var noattach= new Discord.MessageEmbed().setColor(`RED`).setAuthor(`No Attachment Found`).setDescription(`please submit an image of your map along with the map name and link.\n\n**Example:** !submit <map-name> <link> <image>`);
 
 client.on('ready', () => {
