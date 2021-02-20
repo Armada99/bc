@@ -111,6 +111,9 @@ if(msg.guild === null && msg.content.startsWith(`!subpublic`)) {
     } else msg.channel.send("Submissions are not open yet.") 
 return;
 }
+	
+if(!(msg.guild.id==='515192821054177285')) return;
+
 if(msg.content===`!weekly`&& msg.member.hasPermission('ADMINISTRATOR')){
     substatus1=!substatus1;
     msg.reply("Weekly Submission Channel"+ (k?"Opened":"Closed"));
@@ -128,7 +131,6 @@ function attachIsImage(url) {
 }
 	
 	
-if(!(msg.guild.id==='515192821054177285')) return;
 	
 if(msg.member.roles.cache.has('660004539709259808') && Math.floor(Math.random()*10)%3===1){
     if(msg.author.id=='394964599801380865') msg.react(lucy[Math.floor(Math.random()*lucy.length)]);
