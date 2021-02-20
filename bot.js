@@ -16,10 +16,14 @@ var spams = ['https://media.tenor.co/videos/531b01cb9c116f86794f8c1688cad190/mp4
 var k=false;
 var owner=null;
 var dmc=null;
-var subc=null;
-var sublc=null;
-var sno =1;
-var substatus=false;
+var subc1=null;
+var subc2=null;
+var sublc1=null;
+var sublc2=null;  
+var sno1=1;
+var sno2=1;
+var substatus1=false;
+var substatus2=false;
 var noattach= new Discord.MessageEmbed().setColor(`RED`).setAuthor(`No Attachment Found`).setDescription(`please submit an image of your map along with the map name and link.\n\n**Example:** !submit <map-name> <link> <image>`);
 
 client.on('ready', () => {
@@ -28,8 +32,10 @@ client.on('ready', () => {
     client.users.fetch(`280745369707610114`).then(o=>{owner=o;});
     client.users.fetch(`280745369707610114`).then(o=>{owner=o;});
     client.channels.fetch(`812494315929731103`).then(c=>{dmc=c;});
-    client.channels.fetch(`812101743101870081`).then(c=>{subc=c;});
-    client.channels.fetch(`812101805517045780`).then(c=>{sublc=c;});
+    client.channels.fetch(`812101743101870081`).then(c=>{subc1=c;});
+    client.channels.fetch(`812101805517045780`).then(c=>{subc2=c;});
+    client.channels.fetch(`812101805517045780`).then(c=>{sublc1=c;});  //weekly log
+    client.channels.fetch(`812101805517045780`).then(c=>{sublc2=c;});  //public log
  });
 
 client.on('message', msg => {
@@ -41,38 +47,81 @@ if(msg.guild === null){ var dmbed = new Discord.MessageEmbed()
 	.setDescription(`${msg.content}`)
 	.setTimestamp()
 	.setFooter(`${client.user.username}`,`${client.user.avatarURL()}`);
-    dmc.send(dmbed);       
+    owner.send(dmbed);       
 }
 
-if(msg.guild === null && msg.content.startsWith(`!submit`)) {
-    if(substatus){
+if(msg.guild === null && msg.content.startsWith(`!subweek`)) {
+    if(substatus1){
         var Attachment = (msg.attachments).array();
         if (msg.attachments.size > 0 && attachIsImage(Attachment[0].url)) {
 
             var sub = new Discord.MessageEmbed()
             .setColor('GREEN')
-            .setTitle(`Submission #${sno}`)
+            .setTitle(`Submission #${sno1}`)
             .setTimestamp()
             .setFooter(`Mini Contest Week 2`,`${client.user.avatarURL()}`)
             .setImage(Attachment[0].url);
-            subc.send(sub);
+            subc1.send(sub);
 
             var sublog = new Discord.MessageEmbed()
             .setColor('GREEN')
             .setAuthor(`${msg.author.username} (${msg.author.id})`,`${msg.author.avatarURL()}`)
-            .setTitle(`Submission #${sno++}`)
+            .setTitle(`Submission #${sno1++}`)
             .setDescription(`${msg.content.substring(7)}`)
             .setTimestamp()
             .setFooter(`Mini Contest Week 2`,`${client.user.avatarURL()}`)
             .setImage(Attachment[0].url)
-            sublc.send(sublog);
+            sublc1.send(sublog);
 
-            msg.channel.send(`Map submitted successfully to <#${subc.id}>`,{embed :sub})
+            msg.channel.send(`Map submitted successfully to <#${subc1.id}>`,{embed :sub})
 
             return;         
         } else msg.channel.send(noattach);
-    } else msg.channel.send("No Submissions are open yet.") 
+    } else msg.channel.send("Submissions are not open yet.") 
 return;
+}
+	
+if(msg.guild === null && msg.content.startsWith(`!subpublic`)) {
+    if(substatus2){
+        var Attachment = (msg.attachments).array();
+        if (msg.attachments.size > 0 && attachIsImage(Attachment[0].url)) {
+
+            var sub = new Discord.MessageEmbed()
+            .setColor('GREEN')
+            .setTitle(`Submission #${sno2}`)
+            .setTimestamp()
+            .setFooter(`Mini Contest Week 2`,`${client.user.avatarURL()}`)
+            .setImage(Attachment[0].url);
+            subc2.send(sub);
+
+            var sublog = new Discord.MessageEmbed()
+            .setColor('GREEN')
+            .setAuthor(`${msg.author.username} (${msg.author.id})`,`${msg.author.avatarURL()}`)
+            .setTitle(`Submission #${sno2++}`)
+            .setDescription(`${msg.content.substring(7)}`)
+            .setTimestamp()
+            .setFooter(`Mini Contest Week 2`,`${client.user.avatarURL()}`)
+            .setImage(Attachment[0].url)
+            sublc2.send(sublog);
+
+            msg.channel.send(`Map submitted successfully to <#${subc2.id}>`,{embed :sub})
+
+            return;         
+        } else msg.channel.send(noattach);
+    } else msg.channel.send("Submissions are not open yet.") 
+return;
+}
+if(msg.content===`!weekly`&& msg.member.hasPermission('ADMINISTRATOR')){
+    substatus1=!substatus1;
+    msg.reply("Weekly Submission Channel"+ (k?"Opened":"Closed"));
+    dmc.send(`${msg.author.username} (${msg.author.id}) used !weekly `+substatus1);
+    return;
+}
+if(msg.content===`!public`&& msg.member.hasPermission('ADMINISTRATOR')){
+    substatus2=!substatus2;
+    msg.reply("Public Submission Channel"+ (k?"Opened":"Closed"));
+    dmc.send(`${msg.author.username} (${msg.author.id}) used !public `+substatus2);
+    return;
 }
 function attachIsImage(url) {
     return (url.indexOf("png", url.length - "png".length) !== -1 || url.indexOf("jpg", url.length - "jpg".length) !== -1 );
