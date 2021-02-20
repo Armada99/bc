@@ -71,7 +71,8 @@ if(msg.guild === null && msg.content.startsWith(`!submit`)) {
 
             return;         
         } else msg.channel.send(noattach);
-    } else msg.channel.send("No Submissions are open yet.")
+    } else msg.channel.send("No Submissions are open yet.") 
+return;
 }
 function attachIsImage(url) {
     return (url.indexOf("png", url.length - "png".length) !== -1 || url.indexOf("jpg", url.length - "jpg".length) !== -1 );
