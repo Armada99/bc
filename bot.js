@@ -26,7 +26,7 @@ var substatus1=false;
 var substatus2=false;
 var noattach= new Discord.MessageEmbed().setColor(`RED`).setAuthor(`No Attachment Found`).setDescription(`please submit an image of your map along with the map name and link.\n\n**Example:** !submit <map-name> <link> <image>`);
 var subnotopen= new Discord.MessageEmbed().setColor(`RED`).setAuthor(`Submissions are not open yet`).setFooter(`If you feel like this is wrong, please report to a staff.`);
-var weekdesc= `Week 15`;               //weekly desc
+var weekdesc= `Week 15 Contest`;               //weekly desc
 var publdesc= `Public 5 Contest`;              //public desc
 client.on('ready', () => {
     client.user.setActivity(x); 
