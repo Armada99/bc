@@ -63,7 +63,7 @@ if(msg.guild === null && msg.content.startsWith(`!subweek`)) {
             .setColor('GREEN')
             .setTitle(`Submission #${sno1}`)
             .setTimestamp()
-            .setFooter(`Mini Contest Week 2`,`${client.user.avatarURL()}`)
+            .setFooter(weekdesc,`${client.user.avatarURL()}`)
             .setImage(Attachment[0].url);
             subc1.send(sub);
 
@@ -94,7 +94,7 @@ if(msg.guild === null && msg.content.startsWith(`!subpublic`)) {
             .setColor('GREEN')
             .setTitle(`Submission #${sno2}`)
             .setTimestamp()
-            .setFooter(`Mini Contest Week 2`,`${client.user.avatarURL()}`)
+            .setFooter(publdesc,`${client.user.avatarURL()}`)
             .setImage(Attachment[0].url);
             subc2.send(sub);
 
