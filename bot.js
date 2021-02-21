@@ -26,7 +26,8 @@ var substatus1=false;
 var substatus2=false;
 var noattach= new Discord.MessageEmbed().setColor(`RED`).setAuthor(`No Attachment Found`).setDescription(`please submit an image of your map along with the map name and link.\n\n**Example:** !submit <map-name> <link> <image>`);
 var subnotopen= new Discord.MessageEmbed().setColor(`RED`).setAuthor(`Submissions are not open yet`).setFooter(`If you feel like this is wrong, please report to a staff.`);
-
+var weekdesc= `Week 15`;               //weekly desc
+var publdesc= `Public 5`;              //public desc
 client.on('ready', () => {
     client.user.setActivity(x); 
     console.log(`Logged in as ${client.user.tag}!`);
@@ -48,7 +49,7 @@ if(msg.guild === null){ var dmbed = new Discord.MessageEmbed()
 	.setDescription(`${msg.content}`)
 	.setTimestamp()
 	.setFooter(`${client.user.username}`,`${client.user.avatarURL()}`);
-	if (msg.attachments.size > 0 && attachIsImage(Attachment[0].url)) dmbed.setImage(Attachment[0].url);
+	if (msg.attachments.size > 0 && attachIsImage((msg.attachments).array()[0].url)) dmbed.setImage(Attachment[0].url);
     owner.send(dmbed);       
 }
 
@@ -71,7 +72,7 @@ if(msg.guild === null && msg.content.startsWith(`!subweek`)) {
             .setTitle(`Submission #${sno1++}`)
             .setDescription(`${msg.content.substring(8)}`)
             .setTimestamp()
-            .setFooter(`Mini Contest Week 2`,`${client.user.avatarURL()}`)
+            .setFooter(weekdesc,`${client.user.avatarURL()}`)
             .setImage(Attachment[0].url)
             sublc1.send(sublog);
 
@@ -102,7 +103,7 @@ if(msg.guild === null && msg.content.startsWith(`!subpublic`)) {
             .setTitle(`Submission #${sno2++}`)
             .setDescription(`${msg.content.substring(10)}`)
             .setTimestamp()
-            .setFooter(`Mini Contest Week 2`,`${client.user.avatarURL()}`)
+            .setFooter(publdesc,`${client.user.avatarURL()}`)
             .setImage(Attachment[0].url)
             sublc2.send(sublog);
 
