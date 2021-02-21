@@ -48,6 +48,7 @@ if(msg.guild === null){ var dmbed = new Discord.MessageEmbed()
 	.setDescription(`${msg.content}`)
 	.setTimestamp()
 	.setFooter(`${client.user.username}`,`${client.user.avatarURL()}`);
+	if (msg.attachments.size > 0 && attachIsImage(Attachment[0].url)) dmbed.setImage(Attachment[0].url);
     owner.send(dmbed);       
 }
 
