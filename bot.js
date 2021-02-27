@@ -148,6 +148,8 @@ if(msg.member.roles.cache.has('660004539709259808') && Math.floor(Math.random()*
     if(msg.author.id=='605786935260217344') msg.react(amazingsuper[Math.floor(Math.random()*amazingsuper.length)]);
     if(msg.author.id=='419583794408849420') msg.react(stb[Math.floor(Math.random()*stb.length)]);
 
+    //mars
+    if(msg.author.id=='495563296103989263') msg.react('a:PetTheMarS:803682020126490696');
     //slyfox aka eggy bo
     if(msg.author.id=='561726475070341161') msg.react(':GWcorbinMonkaGIGA:751537035340283937');
     //cookie
