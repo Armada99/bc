@@ -120,13 +120,13 @@ if(msg.guild===null || !(msg.guild.id==='515192821054177285')) return;
 
 if(msg.content===`!weekly`&& msg.member.hasPermission('ADMINISTRATOR')){
     substatus1=!substatus1;
-    msg.reply("Weekly Submission Channel "+ (substatus1?"Opened":"Closed"));
+    msg.reply(weekdesc+` <#${subc1.id}> `+ (substatus1?"Opened":"Closed"));
     dmc.send(`${msg.author.username} (${msg.author.id}) used !weekly `+substatus1);
     return;
 }
 if(msg.content===`!public`&& msg.member.hasPermission('ADMINISTRATOR')){
     substatus2=!substatus2;
-    msg.reply("Public Submission Channel "+ (substatus2?"Opened":"Closed"));
+    msg.reply(publdesc + ` <#${subc2.id}> ` (substatus2?"Opened":"Closed"));
     dmc.send(`${msg.author.username} (${msg.author.id}) used !public `+substatus2);
     return;
 }
