@@ -126,7 +126,7 @@ if(msg.content===`!weekly`&& msg.member.hasPermission('ADMINISTRATOR')){
 }
 if(msg.content===`!public`&& msg.member.hasPermission('ADMINISTRATOR')){
     substatus2=!substatus2;
-    msg.reply(publdesc+` Submission ` (substatus2?"Opened":"Closed"));
+    msg.reply(publdesc+` Submission in <#${subc2.id}> ` +(substatus2?"Opened":"Closed"));
     dmc.send(`${msg.author.username} (${msg.author.id}) used !public `+substatus2);
     return;
 }
