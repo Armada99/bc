@@ -122,7 +122,7 @@ if(msg.guild===null || !(msg.guild.id==='515192821054177285')) return;
 if(msg.content===`!weekly`&& msg.member.hasPermission('ADMINISTRATOR')){
     if(substatus1==false){
         const args =msg.content.substring(1).split(' ')
-        if(args[1].isNaN()){
+        if(isNaN(args[1])){
             msg.reply(`Please provide the starting submission number`)
             return;
         }
@@ -136,7 +136,7 @@ if(msg.content===`!weekly`&& msg.member.hasPermission('ADMINISTRATOR')){
 if(msg.content===`!public`&& msg.member.hasPermission('ADMINISTRATOR')){
     if(substatus2==false){
         const args =msg.content.substring(1).split(' ')
-        if(args[1].isNaN()){
+        if(isNaN(args[1])){
             msg.reply(`Please provide the starting submission number`)
             return;
         }
