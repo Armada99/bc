@@ -119,7 +119,7 @@ return;
 if(msg.guild===null || !(msg.guild.id==='515192821054177285')) return;
 
 
-if(msg.content===`!weekly`&& msg.member.hasPermission('ADMINISTRATOR')){
+if(msg.content.startsWith(`!weekly`)&& msg.member.hasPermission('ADMINISTRATOR')){
     if(substatus1==false){
         const args =msg.content.substring(1).split(' ')
         if(isNaN(args[1])){
@@ -133,7 +133,7 @@ if(msg.content===`!weekly`&& msg.member.hasPermission('ADMINISTRATOR')){
     dmc.send(`${msg.author.username} (${msg.author.id}) used !weekly `+substatus1);
     return;
 }
-if(msg.content===`!public`&& msg.member.hasPermission('ADMINISTRATOR')){
+if(msg.content.startsWith(`!public`)&& msg.member.hasPermission('ADMINISTRATOR')){
     if(substatus2==false){
         const args =msg.content.substring(1).split(' ')
         if(isNaN(args[1])){
