@@ -118,15 +118,32 @@ return;
 	
 if(msg.guild===null || !(msg.guild.id==='515192821054177285')) return;
 
+
 if(msg.content===`!weekly`&& msg.member.hasPermission('ADMINISTRATOR')){
+    if(substatus1==false){
+        const args =msg.content.substring(1).split(' ')
+        if(args[1].isNaN()){
+            msg.reply(`Please provide the starting submission number`)
+            return;
+        }
+        sno1=args[1];
+    }
     substatus1=!substatus1;
-    msg.reply(weekdesc+` Submission in <#${subc1.id}> `+ (substatus1?"Opened":"Closed"));
+    msg.reply(weekdesc+` Submission in <#${subc1.id}> ` +(substatus1?`Opened with starting number ${sno1}`:"Closed"));
     dmc.send(`${msg.author.username} (${msg.author.id}) used !weekly `+substatus1);
     return;
 }
 if(msg.content===`!public`&& msg.member.hasPermission('ADMINISTRATOR')){
+    if(substatus2==false){
+        const args =msg.content.substring(1).split(' ')
+        if(args[1].isNaN()){
+            msg.reply(`Please provide the starting submission number`)
+            return;
+        }
+        sno2=args[1];
+    }
     substatus2=!substatus2;
-    msg.reply(publdesc+` Submission in <#${subc2.id}> ` +(substatus2?"Opened":"Closed"));
+    msg.reply(publdesc+` Submission in <#${subc2.id}> ` +(substatus2?`Opened with starting number ${sno2}`:"Closed"));
     dmc.send(`${msg.author.username} (${msg.author.id}) used !public `+substatus2);
     return;
 }
