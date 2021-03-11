@@ -243,7 +243,8 @@ if(msg.content.startsWith('!rules')){
     let rules= new Discord.MessageEmbed()
     .setColor('PINK')
     .setTitle('Please click me senpai , UwU')
-    .setURL('https://discord.com/channels/515192821054177285/728042319693086801/742918242544254986')
+    .setURL('https://discord.com/channels/515192821054177285/728042319693086801/742918242544254986');
+    msg.channel.send(rules);
 }
 
 
