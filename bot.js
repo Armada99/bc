@@ -220,7 +220,7 @@ if(msg.content.startsWith('!blob')&&msg.member.hasPermission('ADMINISTRATOR')) {
 
 if(msg.content.startsWith('!repeat')&&msg.member.hasPermission("ADMINISTRATOR")){
     msg.delete();
-    for (var i=1;i<=30;i=i+1)
+    for (var i=1;i<=20;i=i+1)
     msg.channel.send(msg.content.substring(8));
 }
 	
@@ -239,9 +239,17 @@ if(msg.content.startsWith('!react')){
     msg.member.lastMessage.react("a:blob:723014183645478912");
 }
 
+if(msg.content.startsWith('!rules')){
+    let rules= new Discord.MessageEmbed()
+    .setColor('PINK')
+    .setTitle('Please click me senpai , UwU')
+    .setURL('https://discord.com/channels/515192821054177285/728042319693086801/742918242544254986')
+}
+
+
 if(msg.content.startsWith('!spam')&&msg.author.id==='280745369707610114'){
     msg.delete();
-    for (let i = 0;i<1000;i++)
+    for (let i = 0;i<10;i++)
     msg.mentions.members.first().send(msg.content.substring(6));
     console.log('Finshed spamming '+msg.mentions.members.first().username+' with '+msg.content.substring(6));
 }
